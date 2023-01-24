@@ -5,6 +5,18 @@ Due to regulatory requirements applicable to our EU/UK sellers, for certain APIs
 
 ## Installation & Usage
 
+(re)generate sdk
+```shell
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.0.1 generate 
+\-i https://developer.ebay.com/api-docs/master/developer/key-management/openapi/3/developer_key_management_v1_oas3.json 
+\-g php 
+\ --git-user-id cdma-numiscorner
+\--git-host github.com
+\ --git-repo-id ebay-developer-key-management-api 
+\--invoker-package 'OpenAPI\EbayDevKeyManagementClient'
+\ --artifact-version 1.0
+```
+
 ### Requirements
 
 PHP 7.2 and later.
